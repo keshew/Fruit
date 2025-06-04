@@ -30,11 +30,11 @@ struct FruitMenuView: View {
                         
                         Image(.fruitMenu)
                             .resizable()
-                            .frame(width: 200, height: 150)
+                            .frame(width: UIScreen.main.bounds.width > 600 ? 330 : 200, height: UIScreen.main.bounds.width > 600 ? 260 : 150)
                     }
                     .padding(.top, 30)
                     
-                    HStack {
+                    HStack(spacing: UIScreen.main.bounds.width > 600 ? 130: 15) {
                         Image(.backCoin)
                             .resizable()
                             .frame(width: 160, height: 60)
@@ -56,7 +56,9 @@ struct FruitMenuView: View {
                                 .offset(x: -30)
                             }
                         
-                        Spacer()
+                        if UIScreen.main.bounds.width < 600 {
+                            Spacer()
+                        }
                         
                         Image(.backCoin)
                             .resizable()

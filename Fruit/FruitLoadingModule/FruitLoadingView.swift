@@ -17,7 +17,7 @@ struct FruitLoadingView: View {
                         
                         Image(.fruitsLoading)
                             .resizable()
-                            .frame(width: 300, height: 230)
+                            .frame(width: UIScreen.main.bounds.width > 600 ? 400 : 300, height: UIScreen.main.bounds.width > 600 ? 330 : 230)
                     }
                     .padding(.top, 230)
                     
@@ -42,7 +42,7 @@ struct FruitLoadingView: View {
                         }
                         .padding(.bottom, 60)
                     }
-                    .padding(.top, 200)
+                    .padding(.top, UIScreen.main.bounds.width > 900 ? 620 : (UIScreen.main.bounds.width > 600 ? 420 : 200))
                 }
             }
         }
@@ -58,4 +58,3 @@ struct FruitLoadingView: View {
 #Preview {
     FruitLoadingView()
 }
-

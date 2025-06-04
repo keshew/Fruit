@@ -35,7 +35,7 @@ extension GameSpriteKit {
         let rules = SKSpriteNode(imageNamed: "rules")
         rules.name = "rules"
         rules.size = CGSize(width: 70, height: 90)
-        rules.position = CGPoint(x: size.width / 8, y: size.height / 1.28)
+        rules.position = UIScreen.main.bounds.width > 900 ? CGPoint(x: size.width / 8, y: size.height / 1.25) : (UIScreen.main.bounds.width > 600 ? CGPoint(x: size.width / 8, y: size.height / 1.25) : CGPoint(x: size.width / 8, y: size.height / 1.28))
         addChild(rules)
         
         let bonusMoves = SKSpriteNode(imageNamed: "bonusMove")
@@ -109,7 +109,7 @@ extension GameSpriteKit {
 
         let backlifes = SKSpriteNode(imageNamed: "backCoin")
         backlifes.size = CGSize(width: 184, height: 50)
-        backlifes.position = UIScreen.main.bounds.width > 600 ? CGPoint(x: size.width / 1.25, y: size.height / 1.22) : CGPoint(x: size.width / 1.3, y: size.height / 1.25)
+        backlifes.position = UIScreen.main.bounds.width > 900 ? CGPoint(x: size.width / 1.3, y: size.height / 1.22) : (UIScreen.main.bounds.width > 600 ? CGPoint(x: size.width / 1.3, y: size.height / 1.23) : CGPoint(x: size.width / 1.3, y: size.height / 1.25))
         addChild(backlifes)
         
         let life = SKSpriteNode(imageNamed: "life")
@@ -246,11 +246,11 @@ class GameSpriteKit: SKScene, SKPhysicsContactDelegate {
     
     func createDescNode() {
         let desc = SKSpriteNode(imageNamed: "desc")
-        desc.size = CGSize(width: 400, height: 420)
+        desc.size = UIScreen.main.bounds.width > 900 ? CGSize(width: 720, height: 720) : (UIScreen.main.bounds.width > 600 ? CGSize(width: 610, height: 610) : CGSize(width: 400, height: 420))
         desc.position = CGPoint(x: size.width / 2, y: size.height / 2.4)
         addChild(desc)
 
-        let squareSize: CGFloat = UIScreen.main.bounds.width > 600 ? 89 : 48
+        let squareSize: CGFloat = UIScreen.main.bounds.width > 900 ? 93 : (UIScreen.main.bounds.width > 600 ? 80 : 48)
         let spacing: CGFloat = 15
         let columns = 6
         let rows = 6
@@ -305,22 +305,23 @@ class GameSpriteKit: SKScene, SKPhysicsContactDelegate {
                     label.name = "digitLabel"
                     label.userData = ["isPredefined": true]
                     label.attributedText = NSAttributedString(string: text, attributes: [
-                        .font: UIFont(name: "LuckiestGuy-Regular", size: 16)!,
+                        .font: UIFont(name: "LuckiestGuy-Regular", size: UIScreen.main.bounds.width > 900 ? 26 : (UIScreen.main.bounds.width > 600 ? 24 : 16))!,
                         .foregroundColor: UIColor.white,
                         .strokeColor: UIColor(red: 158/255, green: 40/255, blue: 250/255, alpha: 1),
                         .strokeWidth: -2.5
                     ])
+                  
                     label.verticalAlignmentMode = .center
                     label.horizontalAlignmentMode = .center
-                    label.position = CGPoint(x: -13, y: -11)
+                    label.position = UIScreen.main.bounds.width > 900 ? CGPoint(x: -25, y: -25) : (UIScreen.main.bounds.width > 600 ? CGPoint(x: -20, y: -21) : CGPoint(x: -13, y: -11))
                     square.addChild(label)
                 }
 
                 if let _ = imageFruit {
                     let image = SKSpriteNode(imageNamed: returnFruitImage())
-                    image.size = CGSize(width: 25, height: 25)
+                    image.size = UIScreen.main.bounds.width > 900 ? CGSize(width: 50, height: 50) : (UIScreen.main.bounds.width > 600 ? CGSize(width: 40, height: 40) : CGSize(width: 25, height: 25))
                     image.name = "fruitImage"
-                    image.position = CGPoint(x: 5, y: 5)
+                    image.position = UIScreen.main.bounds.width > 900 ? CGPoint(x: 13, y: 15) : (UIScreen.main.bounds.width > 600 ? CGPoint(x: 10, y: 10) : CGPoint(x: 5, y: 5))
                     square.addChild(image)
                 }
 

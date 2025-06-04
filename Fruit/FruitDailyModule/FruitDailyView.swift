@@ -35,7 +35,7 @@ struct FruitDailyView: View {
                             }
                         }
                         .frame(height: 400)
-                        .padding(.horizontal)
+                        .padding(.horizontal, UIScreen.main.bounds.width > 900 ? 310 : (UIScreen.main.bounds.width > 600 ? 210 : 15))
                         .padding(.top, 50)
                 }
                 .padding(.top, 180)

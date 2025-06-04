@@ -142,7 +142,7 @@ struct FruitSettingsView: View {
                                 }
                                 
                                 Button(action: {
-                                    
+                                    fruitSettingsModel.saveSettingsToUserDefaults()
                                 }) {
                                     Image(.backBtn)
                                         .resizable()
@@ -158,7 +158,7 @@ struct FruitSettingsView: View {
                             .offset(y: 80)
                         }
                         .frame(height: 350)
-                        .padding(.horizontal, 30)
+                        .padding(.horizontal, UIScreen.main.bounds.width > 900 ? 280 : (UIScreen.main.bounds.width > 600 ? 180 : 30))
                         .padding(.top, 100)
                 }
             }

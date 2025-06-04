@@ -99,7 +99,7 @@ struct FruitWinView: View {
                                 .offset(y: 80)
                             }
                             .frame(height: 400)
-                            .padding(.horizontal)
+                            .padding(.horizontal, UIScreen.main.bounds.width > 900 ? 260 : (UIScreen.main.bounds.width > 600 ? 180 : 15))
                             .padding(.top, 20)
                     }
                     .padding(.top, 70)

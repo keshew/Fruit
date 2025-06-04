@@ -29,7 +29,7 @@ struct FruitShopView: View {
                         .Guy(size: 34)
                         .padding(.top, 30)
                     
-                    HStack {
+                    HStack(spacing: UIScreen.main.bounds.width > 600 ? 70 : 15) {
                         Image(.backCoin)
                             .resizable()
                             .frame(width: 160, height: 60)
@@ -51,7 +51,9 @@ struct FruitShopView: View {
                                 .offset(x: -30)
                             }
                         
-                        Spacer()
+                        if UIScreen.main.bounds.width < 600 {
+                            Spacer()
+                        }
                         
                         Image(.backCoin)
                             .resizable()
@@ -135,12 +137,12 @@ struct FruitShopView: View {
                             }
                         }
                         .frame(height: 420)
-                        .padding(.horizontal, 20)
+                        .padding(.horizontal, UIScreen.main.bounds.width > 900 ? 280 : (UIScreen.main.bounds.width > 600 ? 180 : 20))
                         .padding(.top, 40)
                     
                     Text("SWIPE LEFT\\RIGHT to next\\prev page")
                         .Guy(size: 20)
-                        .padding(.top, 120)
+                        .padding(.top, UIScreen.main.bounds.width > 900 ? 550 : (UIScreen.main.bounds.width > 600 ? 380 : 120))
                 }
             }
         }

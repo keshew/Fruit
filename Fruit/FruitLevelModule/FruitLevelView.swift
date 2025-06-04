@@ -45,7 +45,7 @@ struct FruitLevelView: View {
                                     }) {
                                         Image(.levelPin)
                                             .resizable()
-                                            .frame(width: 120, height: 120)
+                                            .frame(width: UIScreen.main.bounds.width > 600 ? 200 : 120, height: UIScreen.main.bounds.width > 600 ? 200 : 120)
                                             .overlay {
                                                 Text("\(index + 1)")
                                                     .Guy(size: 46)
@@ -56,7 +56,7 @@ struct FruitLevelView: View {
                                     ZStack {
                                         Image(.levelPin)
                                             .resizable()
-                                            .frame(width: 120, height: 120)
+                                            .frame(width: UIScreen.main.bounds.width > 600 ? 200 : 120, height: UIScreen.main.bounds.width > 600 ? 200 : 120)
                                             .overlay {
                                                 Text("\(index + 1)")
                                                     .Guy(size: 46)

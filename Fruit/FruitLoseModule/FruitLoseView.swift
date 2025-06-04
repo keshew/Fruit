@@ -98,7 +98,7 @@ struct FruitLoseView: View {
                                 .offset(y: 80)
                             }
                             .frame(height: 400)
-                            .padding(.horizontal)
+                            .padding(.horizontal, UIScreen.main.bounds.width > 900 ? 260 : (UIScreen.main.bounds.width > 600 ? 190 : 14))
                             .padding(.top, 20)
                     }
                     .padding(.top, 70)
